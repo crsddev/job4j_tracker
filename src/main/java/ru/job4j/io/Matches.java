@@ -12,18 +12,16 @@ public class Matches {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
-            if (matches > 0 && matches <= 3 && matches <= count) {
+            if (matches > 0 && matches <= Math.min(3, count)) {
                 count -= matches;
                 System.out.println("Осталось спичек: " + count);
             } else {
                 System.out.println("Ошибка введённое количество находится в пределах от 1 до 3 (включительно),"
                         + " и при этом не больше числа оставшихся спичек."
-                + "\nВам будет предложено ввести значение заново");
+                        + "\nВам будет предложено ввести значение заново");
                 turn = !turn;
-
             }
             turn = !turn;
-
         }
         if (!turn) {
             System.out.println("Выиграл первый игрок");
