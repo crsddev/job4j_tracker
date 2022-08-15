@@ -16,7 +16,7 @@ public class DeleteItem implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("== Delete item ==");
-        int id = Integer.parseInt(input.askStr("Enter id: "));
+        int id = input.askInt("Enter id: ");
         boolean rsl = tracker.delete(id);
         if (rsl) {
             out.println("Заявка удалена.");
