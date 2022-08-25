@@ -83,9 +83,8 @@ public class StartUITest {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("Mira"));
-        String searchName = "Mira";
         Input in = new StubInput(
-                new String[]{"0", searchName, "1"}
+                new String[]{"0", one.getName(), "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindItemByName(out),
