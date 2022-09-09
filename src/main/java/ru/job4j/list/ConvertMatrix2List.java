@@ -13,8 +13,4 @@ public class ConvertMatrix2List {
         }
         return list;
     }
-
-    public static void main(String[] args) {
-
-    }
 }
