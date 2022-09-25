@@ -10,7 +10,7 @@ public class UsageMap {
 
         for (String key : hashMap.keySet()) {
             String value = hashMap.get(key);
-            System.out.println("key: " + key + "\nvalue: " + value);
+            System.out.println("key: " + key + System.lineSeparator() + "value: " + value);
         }
     }
 }
