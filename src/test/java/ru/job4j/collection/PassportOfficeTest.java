@@ -11,4 +11,15 @@ public class PassportOfficeTest {
         office.add(citizen);
         assertThat(office.get(citizen.getPassport())).isEqualTo(citizen);
     }
+
+    @Test
+    public void whenAlreadyExist() {
+        Citizen citizen = new Citizen("4213Afa", "Example Expample");
+        PassportOffice office = new PassportOffice();
+        office.add(citizen);
+        Citizen alreadyCitizen = new Citizen("4213Afa", "Example Expample");
+        boolean rsl = office.add(alreadyCitizen);
+        assertThat(rsl).isFalse();
+
+    }
 }
