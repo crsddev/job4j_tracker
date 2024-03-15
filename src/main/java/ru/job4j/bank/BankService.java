@@ -62,13 +62,9 @@ public class BankService {
         Account sourceAcc = findByRequisite(sourcePassport, sourceRequisite);
         Account destinationAcc = findByRequisite(destinationPassport, destinationRequisite);
         if (sourceAcc != null && destinationAcc != null) {
-            double balanceFrom = sourceAcc.getBalance();
-            double balanceTo = destinationAcc.getBalance();
-            if (balanceFrom >= amount) {
-                balanceFrom -= amount;
-                balanceTo += amount;
-                sourceAcc.setBalance(balanceFrom);
-                destinationAcc.setBalance(balanceTo);
+            if (sourceAcc.getBalance() >= amount) {
+                sourceAcc.setBalance(sourceAcc.getBalance() - amount);
+                destinationAcc.setBalance(destinationAcc.getBalance() + amount);
                 result = true;
             }
 
