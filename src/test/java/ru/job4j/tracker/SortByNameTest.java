@@ -26,7 +26,7 @@ public class SortByNameTest {
 
         );
         Collections.sort(items, new ItemAscByName());
-        assertThat(items.toString()).isEqualTo(expected.toString());
+        assertThat(items).isEqualTo(expected);
     }
 
     @Test
@@ -46,7 +46,7 @@ public class SortByNameTest {
                 new Item(1, "test1")
         );
         Collections.sort(items, new ItemDescByName());
-        assertThat(items.toString()).isEqualTo(expected.toString());
+        assertThat(items).isEqualTo(expected);
     }
 
 }
